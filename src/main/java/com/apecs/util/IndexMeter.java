@@ -16,7 +16,7 @@ public class IndexMeter {
 	 * The string is the name of the measured item (e.g. water), and the integer
 	 * is the actual value of the meter (e.g. 1729).
 	 *
-	 * Example: K: water - V: 1729
+	 * Example: {"key":"sampleKey","value":1729}
 	 *
 	 * Note: This field is used only when a single name-value entry is enough to
 	 * store all the information required for an IndexMeter and for testing
@@ -26,6 +26,8 @@ public class IndexMeter {
 
 	/**
 	 * The list containing all the name-value entry pairs.
+	 * 
+	 * Example: [{"key":"sampleKey","value":1729}, {"key":"sampleKey0","value":0}, {"key":"sampleKey1","value":1}]
 	 */
 	private String nameValueEntriesList;
 
@@ -35,7 +37,7 @@ public class IndexMeter {
 	 * The string is a representation of the date (month and year), and the list
 	 * contains all the name-value entry pairs.
 	 *
-	 * Example: K: August, 2015 - V: nameValueEntriesList
+	 * Example: {"key":"August, 2015", "value": nameValueEntriesList.toString()}
 	 */
 	private String indexesMap;
 

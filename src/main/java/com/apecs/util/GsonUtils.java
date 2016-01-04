@@ -104,6 +104,11 @@ public class GsonUtils {
 		return jsonParser.parse(jsonStringArray).getAsJsonArray();
 	}
 
+	/**
+	 * 
+	 * @param jsonStringObject
+	 * @return
+	 */
 	public static boolean isJsonObject(String jsonStringObject) {
 		try {
 			return toJsonObject(jsonStringObject).isJsonObject();
@@ -112,6 +117,11 @@ public class GsonUtils {
 		}
 	}
 
+	/**
+	 * 
+	 * @param jsonStringArray
+	 * @return
+	 */
 	public static boolean isJsonArray(String jsonStringArray) {
 
 		try {
