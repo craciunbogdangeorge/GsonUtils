@@ -10,7 +10,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		Person p = new Person("Ion", "Barack");
-		IndexMeter i = new IndexMeter(1, "id", "water - 5");
+		IndexMeter i = new IndexMeter(1, "ionBarack", GsonUtils.toJsonString(p));
 		Map.Entry<String, Integer> entry = new AbstractMap.SimpleEntry<String, Integer>("sampleKey", 1729);
 		
 		List<String> list = new ArrayList<String>();

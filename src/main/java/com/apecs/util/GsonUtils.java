@@ -9,11 +9,11 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonSyntaxException;
 
-public class GsonUtils {
+public final class GsonUtils {
 
-	private static Gson gson = new Gson();
+	private static final Gson gson = new Gson();
 
-	private static JsonParser jsonParser = new JsonParser();
+	private static final JsonParser jsonParser = new JsonParser();
 
 	/**
 	 * Just making default constructor private for noninstantiability.
