@@ -3,11 +3,16 @@ Util class for converting raw objects to their JSON String representation, using
 
 Static methods:
 - String toJsonString(Object object), 
-  example: 
-  Person p = new Person("Ion", "Barack");
-  GsonUtils.toJsonString(p)
-  System.out.println(GsonUtils.toJsonString(p)); 
-  // Output: {"name":"Ion","surname":"Barack"}
+  
+example: 
+  
+Person p = new Person("Ion", "Barack");
+  
+GsonUtils.toJsonString(p)
+  
+System.out.println(GsonUtils.toJsonString(p)); 
+  
+// Output: {"name":"Ion","surname":"Barack"}
 
 - String toJsonString(Object object, Type typeOfT),
   example:
