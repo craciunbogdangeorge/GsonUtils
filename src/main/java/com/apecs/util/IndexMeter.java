@@ -27,7 +27,8 @@ public class IndexMeter {
 	/**
 	 * The list containing all the name-value entry pairs.
 	 * 
-	 * Example: [{"key":"sampleKey","value":1729}, {"key":"sampleKey0","value":0}, {"key":"sampleKey1","value":1}]
+	 * Example: [{"key":"sampleKey","value":1729},
+	 * {"key":"sampleKey0","value":0}, {"key":"sampleKey1","value":1}]
 	 */
 	private String nameValueEntriesList;
 
@@ -46,7 +47,6 @@ public class IndexMeter {
 	 */
 	private Date date;
 
-	@SuppressWarnings("unused")
 	private String providerUserId;
 
 	/**
@@ -112,6 +112,7 @@ public class IndexMeter {
 	@Override
 	public String toString() {
 		StringBuilder stringBuilder = new StringBuilder("Id: " + id + "\n")
+				.append("providerUserId :").append(providerUserId).append("\n")
 				.append("nameValueEntry: ").append(nameValueEntry).append("\n");
 
 		if (nameValueEntriesList != null) {
