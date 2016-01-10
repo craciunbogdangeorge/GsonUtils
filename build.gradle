@@ -1,8 +1,17 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
 
 sourceCompatibility = 1.5
 version = '1.0'
+
+def GsonUtils = file('build/GsonUtils.jar')
+
+artifacts {
+    archives GsonUtils
+}
+
 jar {
     manifest {
         attributes 'Implementation-Title': 'Gradle Quickstart', 'Implementation-Version': version
@@ -11,6 +20,9 @@ jar {
 
 repositories {
     mavenCentral()
+	ivy {
+        url "https://github.com/craciunbogdangeorge/GsonUtils.git"
+    }
 }
 
 dependencies {
@@ -23,10 +35,14 @@ test {
     systemProperties 'property': 'value'
 }
 
-uploadArchives {
-    repositories {
-       flatDir {
-           dirs 'repos'
-       }
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId 'com.apecs.util'
+            artifactId 'GsonUtils'
+            version '1.0'
+
+            from components.java
+        }
     }
 }

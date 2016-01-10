@@ -104,31 +104,9 @@ public final class GsonUtils {
 		return jsonParser.parse(jsonStringArray).getAsJsonArray();
 	}
 
-	/**
-	 * 
-	 * @param jsonStringObject
-	 * @return
-	 */
-	public static boolean isJsonObject(String jsonStringObject) {
-		try {
-			return toJsonObject(jsonStringObject).isJsonObject();
-		} catch (IllegalStateException e) {
-			return false;
-		}
-	}
-
-	/**
-	 * 
-	 * @param jsonStringArray
-	 * @return
-	 */
-	public static boolean isJsonArray(String jsonStringArray) {
-
-		try {
-			return toJsonArray(jsonStringArray).isJsonArray();
-		} catch (IllegalStateException e) {
-			return false;
-		}
+	public static JsonElement toJsonElement(String jsonStringElement)
+			throws JsonSyntaxException, IllegalStateException {
+		return jsonParser.parse(jsonStringElement);
 	}
 
 	/**
@@ -141,5 +119,36 @@ public final class GsonUtils {
 	public static JsonElement jsonElementFrom(String jsonString) {
 
 		return jsonParser.parse(jsonString);
+	}
+
+	/**
+	 * Checks if the provided String is a representation of a JSON object.
+	 * 
+	 * @param jsonStringObject
+	 *            a possible String representation of a JSON object.
+	 * @return true if this element is of type JsonObject, false otherwise.
+	 */
+	public static boolean isJsonObject(String jsonStringObject) {
+		try {
+			return toJsonObject(jsonStringObject).isJsonObject();
+		} catch (IllegalStateException e) {
+			return false;
+		}
+	}
+
+	/**
+	 * Checks if the provided String is a representation of a JSON array.
+	 * 
+	 * @param jsonStringArray
+	 *            a possible String representation of a JSON array.
+	 * @return true if this element is of type JsonArray, false otherwise.
+	 */
+	public static boolean isJsonArray(String jsonStringArray) {
+
+		try {
+			return toJsonArray(jsonStringArray).isJsonArray();
+		} catch (IllegalStateException e) {
+			return false;
+		}
 	}
 }
