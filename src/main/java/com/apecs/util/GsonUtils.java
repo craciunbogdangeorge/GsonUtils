@@ -1,13 +1,14 @@
 package com.apecs.util;
 
-import java.lang.reflect.Type;
-
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonSyntaxException;
+
+import java.lang.reflect.Type;
+import java.util.Map;
 
 public final class GsonUtils {
 
@@ -70,6 +71,31 @@ public final class GsonUtils {
 		return gson.fromJson(json, typeOfT);
 	}
 
+	/**
+   * Returns the JSON object as a plain java object by the specified type.
+   * 
+   * @param map
+   *            a Map representation of an object.
+   * @param type
+   *            the type of the desired object.
+   * @return a plain java object by the specified type.
+   */
+  public static <T> T fromMap(Map<String, Object> map, Class<T> type) {
+    return gson.fromJson(gson.toJson(map), type);
+  }
+
+  /**
+   * Returns the JSON object as a plain java object by the specified type.
+   * 
+   * @param map
+   *            a Map representation of an object.
+   * @param type
+   *            the type of the desired object.
+   * @return a plain java object by the specified type.
+   */
+  public static Map<String,Object> toMap(Object object) {
+    return gson.fromJson(gson.toJson(object),Map.class);
+  }
 	/**
 	 * Returns a JsonObject object from a String representation of a JSON
 	 * object.
